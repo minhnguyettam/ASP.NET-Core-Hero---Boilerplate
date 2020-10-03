@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>ASP.NET Core Hero</title>
+    <partial name="AdminLTE/_Styles" />
+</head>
+<body class="hold-transition sidebar-mini">
+    <div id="loader-wrapper">
+        <div id="loader"></div>
+        <div class="loader-section"></div>
+    </div>
+    <div class="wrapper">
+        <partial name="AdminLTE/_Navigation" />
+        <partial name="AdminLTE/_Sidebar" />
+        <div class="content-wrapper" id="contentWrapper">
+            <div class="content">
+                <div class="container-fluid">
+                    @await Html.PartialAsync("AdminLte/_PageHeader")
+                    @RenderBody()
+                </div>
+            </div>
+        </div>
+        <partial name="AdminLTE/_Footer" />
+        <partial name="AdminLTE/_LogoutModal" />
+        <partial name="AdminLTE/Modals/_FormModal" />
+    </div>
+    <partial name="AdminLTE/_Scripts" />
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
